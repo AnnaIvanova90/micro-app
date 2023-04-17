@@ -81,7 +81,7 @@ R = round(max(Req),2)
 #число пор больше норрита
 counter = 0
 for r in Req:
-    if r > ((1450/*4/3.14)**0.5)/coef : counter +=1
+    if r > ((1450*4/3.14)**0.5)/coef : counter +=1
         
 
 # In[ ]:
