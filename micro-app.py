@@ -82,7 +82,9 @@ R = round(max(Req),2)
 counter = 0
 for r in Req:
     if r > ((1450/3.14)**0.5)/coef : counter +=1
-        
+if counter >0:
+    nor = len(Req)/counter
+else: nor = 0        
 
 # In[ ]:
 
@@ -97,7 +99,7 @@ bin_ranges = list(range (15, int(a)+5, 5))
 st.image(fibres, caption='found pores')
 st.write('Total porousity is', round(P,2))
 st.write('The max pore is', round(R,2))
-st.write('The numper of pores bigger than Norrit is ', counter)
+st.write('йThe numper of pores bigger than Norrit is ', nor)
 
 
 st.pyplot(freq)
