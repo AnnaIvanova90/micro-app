@@ -31,8 +31,6 @@ import cv2
 from PIL import Image
 
 img = Image.open(uploaded_file)
-img = img.save("img.jpg")
-
 area = (0,0, 2046, 1768)
 image = img.crop(area)
 image = image.save("image.jpg")
