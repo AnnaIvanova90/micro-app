@@ -94,7 +94,7 @@ bin_centers = np.diff(bins)*0.5 + bins[:-1]
 n = 0
 for fr, x, patch in zip(freq, bin_centers, patches):
   height = int(freq[n])
-  plt.annotate("{}".format(height),
+  ax.annotate("{}".format(height),
                xy = (x, height),             # top left corner of the histogram bar
                xytext = (0,0.5),             # offsetting label position above its bar
                textcoords = "offset points", # Offset (in points) from the *xy* value
