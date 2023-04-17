@@ -29,6 +29,7 @@ st.image(uploaded_file, caption='researched module')
 import numpy as np
 import cv2
 from PIL import Image
+import matplotlib.pyplot as plt
 
 img = Image.open(uploaded_file)
 area = (0,0, 2046, 1768)
