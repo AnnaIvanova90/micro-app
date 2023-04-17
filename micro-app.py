@@ -55,13 +55,9 @@ for con in Contours:
 Sph = (image.shape[0])*(image.shape[1])
 P = Spor/Sph*100
 
-
-
 # In[2]:
 
-
 fibres = cv2.drawContours(image, Contours, -1, (0, 255, 0), 1)
-
 
 # In[ ]:
 
@@ -77,13 +73,12 @@ D = round(max(Req),2)
 
 # In[ ]:
 
-
+Rnor = 43
 #число пор больше норрита
 counter = 0
 for r in Req:
-    if r > ((1450*4/3.14)**0.5)/coef : counter +=1
-if counter >0:
-    nor = len(Req)/counter
+    if r > Rnor/coef : counter +=1
+if counter >0: nor = len(Req)/counter
 else: nor = 0        
 
 # In[ ]:
