@@ -34,7 +34,7 @@ img = Image.open(uploaded_file)
 area = (0,0, 2046, 1768)
 image = img.crop(area)
 image = image.save("image.jpg")
-
+image = cv2.imread("image.jpg")
 
 # In[1]:
 
