@@ -76,9 +76,9 @@ D = round(max(Req),2)
 Rnor = 43
 #число пор больше норрита
 counter = 0
-for r in Req:
-    if r > Rnor/coef : counter +=1
-if counter >0: nor = counter/len(Req)
+for n in nn:
+    if n > 1450/coef/coef : counter +=1
+if counter >0: nor = counter/len(nn)
 else: nor = 0        
 
 # In[ ]:
