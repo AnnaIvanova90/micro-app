@@ -82,11 +82,27 @@ if counter >0: nor = counter/len(nn)
 else: nor = 0        
 
 # In[ ]:
-
-
+fig, ax = plt.subplots()
+  
 a = (max(Req)//10 +1)*10
 
 bin_ranges = list(range (15, int(a)+5, 5))     
+plt.figure(figsize=(10,10))
+freq, bins, patches = ax.hist (Req, bins=bin_ranges, edgecolor='black')
+
+bin_centers = np.diff(bins)*0.5 + bins[:-1]
+
+n = 0
+for fr, x, patch in zip(freq, bin_centers, patches):
+  height = int(freq[n])
+  plt.annotate("{}".format(height),
+               xy = (x, height),             # top left corner of the histogram bar
+               xytext = (0,0.5),             # offsetting label position above its bar
+               textcoords = "offset points", # Offset (in points) from the *xy* value
+               ha = 'center', va = 'bottom'
+               )
+  n = n+1
+  
 
 # In[ ]:
 
@@ -97,5 +113,5 @@ st.write('Максимальный эквивалентный диаметр п�
 st.write('Доля пор больше НОРИТ', round(nor*100,2))
 
 
-st.pyplot(freq)
+st.pyplot(ax)
 
