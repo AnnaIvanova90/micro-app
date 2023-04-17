@@ -64,7 +64,7 @@ for con in Contours:
 
 Sph = (image.shape[0])*(image.shape[1])
 P = Spor/Sph*100
-P
+
 
 
 # In[2]:
@@ -130,17 +130,10 @@ for fr, x, patch in zip(freq, bin_centers, patches):
 
 
 st.image(fibres, caption='found pores')
-st.write('Total porousity is', P)
-st.write('The max pore is', R)
+st.write('Total porousity is', round(P,2))
+st.write('The max pore is', round(R,2))
 st.write('The numper of pores bigger than Norrit is ', nor)
 
-
-# In[ ]:
-
-
-arr = np.random.normal(1, 1, size=100)
-fig, ax = plt.subplots()
-ax.hist(arr, bins=20)
 
 st.pyplot(freq)
 
