@@ -49,11 +49,11 @@ Spor = 0
 
 for con in Contours:
      area = cv2.contourArea(con)
-     nn.append(area)
-     if area > 25 and area <10000 : Spor += area
+     
+     if area > 25 and area <10000 : nn.append(area)
 
 Sph = (image.shape[0])*(image.shape[1])
-P = Spor/Sph*100
+P = sum(nn)/Sph*100
 
 # In[2]:
 
