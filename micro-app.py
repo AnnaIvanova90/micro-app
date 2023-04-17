@@ -70,7 +70,7 @@ fibres = cv2.drawContours(image, Contours, -1, (0, 255, 0), 1)
 Req = []
 
 for n in nn:
-    r = ((n*4/3.14)**0.5)*coef
+    r = ((n/3.14)**0.5)*coef
     if r > 15 and r < 1000 : Req.append(r)
 R = round(max(Req),2)
 
@@ -81,7 +81,7 @@ R = round(max(Req),2)
 #число пор больше норрита
 counter = 0
 for r in Req:
-    if r > ((1450*4/3.14)**0.5)/coef : counter +=1
+    if r > ((1450/3.14)**0.5)/coef : counter +=1
         
 
 # In[ ]:
