@@ -69,7 +69,7 @@ for n in nn:
     r = ((n*4/3.14)**0.5)*coef
     if r > 15 and r < 1000 : Req.append(r)
 D = round(max(Req),2)
-
+Dav = mean(Req)
 
 # In[ ]:
 
@@ -108,6 +108,7 @@ for fr, x, patch in zip(freq, bin_centers, patches):
 st.image(fibres, caption='found pores')
 st.write('Общая пористость образца', round(P,2))
 st.write('Максимальный эквивалентный диаметр поры', round(D,2))
+st.write('Средний эквивалентный диаметр поры', round(Dav,2))
 st.write('Доля пор больше НОРИТ', round(nor*100,2))
 st.pyplot(fig)
 
