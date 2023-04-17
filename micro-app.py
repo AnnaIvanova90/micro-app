@@ -14,9 +14,7 @@ st.subheader('This app is the property of Teсon MT.')
 # In[2]:
 
 
-data = st.selectbox(
-    'Select the scale of photo',
-    ('500nm', '1000nm'))
+data =  st.number_input('Select the scale of photo')
 
 uploaded_file = st.file_uploader("сhoose a photo", type = 'tif' )
 
