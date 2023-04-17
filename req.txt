@@ -1,5 +1,5 @@
 streamlit >= 1.9.2
-opencv-python-headless
+opencv-python-headless==4.5.1.48
 numpy
 Pillow
 Matplotlib
