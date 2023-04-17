@@ -78,7 +78,7 @@ Rnor = 43
 counter = 0
 for r in Req:
     if r > Rnor/coef : counter +=1
-if counter >0: nor = len(Req)/counter
+if counter >0: nor = counter/len(Req)
 else: nor = 0        
 
 # In[ ]:
@@ -94,7 +94,7 @@ bin_ranges = list(range (15, int(a)+5, 5))
 st.image(fibres, caption='found pores')
 st.write('Общая пористость образца', round(P,2))
 st.write('Максимальный эквивалентный диаметр поры', round(D,2))
-st.write('Доля пор больше НОРИТ', round(nor,2))
+st.write('Доля пор больше НОРИТ', round(nor*100,2))
 
 
 st.pyplot(freq)
