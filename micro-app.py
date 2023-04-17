@@ -69,7 +69,7 @@ for n in nn:
     r = ((n*4/3.14)**0.5)*coef
     if r > 15 and r < 1000 : Req.append(r)
 D = round(max(Req),2)
-Dav = mean(Req)
+Dav = np.mean(Req)
 
 # In[ ]:
 
