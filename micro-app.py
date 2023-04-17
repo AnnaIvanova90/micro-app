@@ -72,8 +72,6 @@ Req = []
 for n in nn:
     r = ((n*4/3.14)**0.5)*coef
     if r > 15 and r < 250 : Req.append(r)
-
-
 R = round(max(Req),2)
 
 
@@ -83,8 +81,7 @@ R = round(max(Req),2)
 #число пор больше норрита
 counter = 0
 for r in Req:
-    if r > (1450*4/3.14)**0.5: 
-        counter +=1
+    if r > (1450*4/3.14)**0.5: counter +=1
         
 print (counter)
 
@@ -99,22 +96,6 @@ else: nor = 0
 a = (max(Req)//10 +1)*10
 
 bin_ranges = list(range (15, int(a)+5, 5))     
-plt.figure(figsize=(10,10))
-freq, bins, patches = plt.hist (Req, bins=bin_ranges, edgecolor='black')
-
-bin_centers = np.diff(bins)*0.5 + bins[:-1]
-
-n = 0
-for fr, x, patch in zip(freq, bin_centers, patches):
-  height = int(freq[n])
-  plt.annotate("{}".format(height),
-               xy = (x, height),             # top left corner of the histogram bar
-               xytext = (0,0.5),             # offsetting label position above its bar
-               textcoords = "offset points", # Offset (in points) from the *xy* value
-               ha = 'center', va = 'bottom'
-               )
-  n = n+1
-
 
 # In[ ]:
 
@@ -122,7 +103,7 @@ for fr, x, patch in zip(freq, bin_centers, patches):
 st.image(fibres, caption='found pores')
 st.write('Total porousity is', round(P,2))
 st.write('The max pore is', round(R,2))
-st.write('The numper of pores bigger than Norrit is ', nor)
+st.write('The numper of pores bigger than Norrit is ', counter)
 
 
 st.pyplot(freq)
