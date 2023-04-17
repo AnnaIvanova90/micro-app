@@ -32,7 +32,7 @@ from PIL import Image
 
 img = Image.open(uploaded_file)
 img = img.save("img.jpg")
-img = cv2.imread("img.jpg")
+
 area = (0,0, 2046, 1768)
 image = img.crop(area)
 image = image.save("image.jpg")
