@@ -1,5 +1,0 @@
-streamlit >= 1.9.2
-numpy
-opencv-contrib-python
-Pillow
-Matplotlib
