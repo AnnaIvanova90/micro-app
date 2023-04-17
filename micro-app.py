@@ -2,22 +2,16 @@
 # coding: utf-8
 
 # In[1]:
-
-
 import streamlit as st
-
 st.title('Electron Microscopy Analyzer')
-
 st.subheader('This app is the property of Teсon MT.')
 
-
 # In[2]:
-
-
+#установление масштаба
 data =  st.number_input('Select the scale of photo')
 
+#загрузка фотографии и ее обработка
 uploaded_file = st.file_uploader("сhoose a photo", type = 'tif' )
-
 st.image(uploaded_file, caption='researched module')
 
 
@@ -36,8 +30,6 @@ image = image.save("image.jpg")
 image = cv2.imread("image.jpg")
 
 # In[1]:
-
-
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 21, 50)
 Contours, Hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
@@ -52,15 +44,13 @@ plt.imshow(gray)
 #находим пористость
 
 nn = []
-
 coef = data/400
-
 Spor = 0
 
 for con in Contours:
      area = cv2.contourArea(con)
      nn.append(area)
-     if area > 15 and area <10000 : Spor += area
+     if area > 25 and area <10000 : Spor += area
 
 Sph = (image.shape[0])*(image.shape[1])
 P = Spor/Sph*100
