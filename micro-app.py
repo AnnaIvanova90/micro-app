@@ -70,9 +70,9 @@ fibres = cv2.drawContours(image, Contours, -1, (0, 255, 0), 1)
 Req = []
 
 for n in nn:
-    r = ((n/3.14)**0.5)*coef
+    r = ((n*4/3.14)**0.5)*coef
     if r > 15 and r < 1000 : Req.append(r)
-R = round(max(Req),2)
+D = round(max(Req),2)
 
 
 # In[ ]:
@@ -81,7 +81,7 @@ R = round(max(Req),2)
 #число пор больше норрита
 counter = 0
 for r in Req:
-    if r > ((1450/3.14)**0.5)/coef : counter +=1
+    if r > ((1450*4/3.14)**0.5)/coef : counter +=1
 if counter >0:
     nor = len(Req)/counter
 else: nor = 0        
@@ -97,9 +97,9 @@ bin_ranges = list(range (15, int(a)+5, 5))
 
 
 st.image(fibres, caption='found pores')
-st.write('Total porousity is', round(P,2))
-st.write('The max pore is', round(R,2))
-st.write('йThe numper of pores bigger than Norrit is ', nor)
+st.write('Общая пористость образца', round(P,2))
+st.write('Максимальный эквивалентный диаметр поры', round(D,2))
+st.write('Доля пор больше НОРИТ', round(nor,2))
 
 
 st.pyplot(freq)
