@@ -4,14 +4,14 @@
 # In[1]:
 import streamlit as st
 st.title('Electron Microscopy Analyzer')
-st.subheader('This app is the property of Teсon MT.')
+st.subheader('Данное приложение является собственностью ТЕКОН-МТ')
 
 # In[2]:
 #установление масштаба
-data =  st.number_input('Select the scale of photo')
+data =  st.number_input('Укажите масштаб фотографии в нм')
 
 #загрузка фотографии и ее обработка
-uploaded_file = st.file_uploader("сhoose a photo", type = 'tif' )
+uploaded_file = st.file_uploader("Выберете фото", type = 'tif' )
 st.image(uploaded_file, caption='researched module')
 
 
