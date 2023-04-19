@@ -70,6 +70,15 @@ for n in nn:
     if r > 15 and r < 1000 : Req.append(r)
 D = round(max(Req),2)
 Dav = np.mean(Req)
+
+Seq = 0
+for r in Req:
+     if r < 35: a = 0.8
+     elseif r > 45: a = 1.2
+     else: a = 1
+     Seq += r*a 
+Deq = Seq / len(Req)
+     
 M = np.median(Req)
 # In[ ]:
 
@@ -109,6 +118,7 @@ st.image(fibres, caption='found pores')
 st.write('Общая пористость образца', round(P,2))
 st.write('Максимальный эквивалентный диаметр поры', round(D,2))
 st.write('Медианный эквивалентный диаметр поры', round(M,2))
+st.write('быр-быр', round(Deq,2))
 st.write('Средний эквивалентный диаметр поры', round(Dav,2))
 st.write('Доля пор больше НОРИТ', round(nor*100,2))
 st.pyplot(fig)
