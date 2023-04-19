@@ -73,8 +73,8 @@ Dav = np.mean(Req)
 
 Seq = 0
 for r in Req:
-     if r < 35: a = 0.8
-     elif r > 45: a = 1.2
+     if r < 35: a = 0.5
+     elif r > 45: a = 1.5
      else: a = 1
      Seq += r*a 
 Deq = Seq / len(Req)
