@@ -23,6 +23,8 @@ import numpy as np
 import cv2
 from PIL import Image
 import matplotlib.pyplot as plt
+import pandas as pd
+
 
 img = Image.open(uploaded_file)
 area = (0,0, 2046, 1768)
