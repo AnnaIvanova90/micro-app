@@ -12,7 +12,7 @@ scale = st.radio(
     "Выберете разрешение фотографии",
     ('1мкм', '3мкм', '5мкм'))
 #загрузка фотографии и ее обработка
-uploaded_file = st.file_uploader("Выберете фото", type = 'tif' )
+uploaded_file = st.file_uploader("Выберете фото ", type = 'tif' )
 st.image(uploaded_file, caption='researched module')
 
 
