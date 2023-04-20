@@ -132,7 +132,7 @@ data = pd.DataFrame({'porosity': [P],
                      'max pore': [D], 
                      'median pore': [M], 
                      'average pore': [Dav], 
-                     'pores bigger NORIT': [nor]})
+                     'pores bigger NORIT': [nor]})(index=False).encode("utf-8")
 
 st.download_button(
     label="Сохранить данные",
