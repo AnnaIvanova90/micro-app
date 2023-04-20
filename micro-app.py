@@ -131,7 +131,8 @@ st.write('Доля пор больше НОРИТб %', round(nor,2))
 st.pyplot(fig)
 
 some_dict = {'porosity': [P], 'max pore': [D], 'median pore': [M], 'average pore': [Dav],'pores bigger NORIT': [nor]}
-data = pd.DataFrame.from_dict (some_dict, orient='index'). reset_index()
+data_to_csv = pd.DataFrame.from_dict (some_dict, orient='index'). reset_index()
+data= data_to_csv.to_csv(index=False).encode("utf-8")
 st.download_button(
     label="Сохранить данные",
     data=data,
