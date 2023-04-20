@@ -130,12 +130,8 @@ st.write('Средний эквивалентный диаметр поры, н�
 st.write('Доля пор больше НОРИТб %', round(nor,2))
 st.pyplot(fig)
 
-data = pd.DataFrame({'porosity': [P], 
-                     'max pore': [D], 
-                     'median pore': [M], 
-                     'average pore': [Dav], 
-                     'pores bigger NORIT': [nor]})(index=False).encode("utf-8")
-
+some_dict = {'porosity': [P], 'max pore': [D], 'median pore': [M], 'average pore': [Dav],'pores bigger NORIT': [nor]}
+data = pd.DataFrame.from_dict (some_dict, orient='index'). reset_index()
 st.download_button(
     label="Сохранить данные",
     data=data,
