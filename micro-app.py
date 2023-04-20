@@ -44,8 +44,8 @@ plt.imshow(gray)
 
 #находим пористость
 
-if scale = '1000' : coef = 1000/400
-elif scale = '3000': coef = 3000/600
+if scale == '1000' : coef = 1000/400
+elif scale =='3000': coef = 3000/600
 else: coef = 5000/400
      
 nn = []
