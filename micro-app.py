@@ -57,7 +57,7 @@ for con in Contours:
      if area > 100 and area <10000 : nn.append(area)
 
 Sph = (image.shape[0])*(image.shape[1])
-P = sum(nn)/Sph*100
+P = round(sum(nn)/Sph*100, 2)
 
 # In[2]:
 
@@ -73,7 +73,7 @@ for n in nn:
     r = ((n*4/3.14)**0.5)*coef
     if r > 15 and r < 1000 : Req.append(r)
 D = round(max(Req),2)
-Dav = np.mean(Req)
+Dav = round(np.mean(Req), 2)
 
 Seq = 0
 for r in Req:
@@ -83,7 +83,7 @@ for r in Req:
      Seq += r*a 
 Deq = Seq / len(Req)
      
-M = np.median(Req)
+M = round(np.median(Req),2)
 # In[ ]:
 
 Rnor = 43
@@ -91,7 +91,7 @@ Rnor = 43
 counter = 0
 for n in nn:
     if n > 1450/coef/coef : counter +=1
-if counter >0: nor = counter/len(nn)
+if counter >0: nor = round(counter/len(nn) * 100,2)
 else: nor = 0        
 
 # In[ ]:
@@ -119,11 +119,22 @@ for fr, x, patch in zip(freq, bin_centers, patches):
 
 
 st.image(fibres, caption='found pores')
-st.write('Общая пористость образца, %', round(P,2))
-st.write('Максимальный эквивалентный диаметр поры, нм', round(D,2))
-st.write('Медианный эквивалентный диаметр поры, нм', round(M,2))
-st.write('быр-быр', round(Deq,2))
-st.write('Средний эквивалентный диаметр поры, нм', round(Dav,2))
+st.write('Общая пористость образца, %', P)
+st.write('Максимальный эквивалентный диаметр поры, нм', D)
+st.write('Медианный эквивалентный диаметр поры, нм', M)
+st.write('Средний эквивалентный диаметр поры, нм', Dav,2)
 st.write('Доля пор больше НОРИТб %', round(nor*100,2))
 st.pyplot(fig)
 
+data = pd.DataFrame({'porosity': P, 
+                     'max pore': D, 
+                     'median pore': M, 
+                     'average pore': Dav, 
+                     'pores bigger NORIT': nor})
+
+st.download_button(
+    label="Сохранить данные",
+    data=data,
+    file_name='micro_res.csv',
+    mime='text/csv',
+)
