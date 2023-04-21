@@ -46,10 +46,10 @@ plt.imshow(gray)
 
 #находим пористость
 
-if scale == '1мкм' : coef = 1000/400 and a=1
-elif scale =='3мкм': coef = 3000/600 and a=3
-elif scale =='5мкм': coef = 5000/400 and a=5
-elif scale =='10мкм': coef = 10000/400 and a=10
+if scale == '1мкм' : coef = 1000/400  a=1
+elif scale =='3мкм': coef = 3000/600  a=3
+elif scale =='5мкм': coef = 5000/400 a=5
+elif scale =='10мкм': coef = 10000/400  a=10
 else: coef = 30000/400 and a=30
      
 nn = []
