@@ -58,7 +58,8 @@ elif scale =='5мкм':
 elif scale =='10мкм': 
     coef = 10000/400
     a=10
-else: coef = 30000/400 a=30
+else: coef = 30000/400 
+    a=30
      
 nn = []
 Spor = 0
