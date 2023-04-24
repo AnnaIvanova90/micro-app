@@ -108,7 +108,7 @@ else: nor = 0
 # In[ ]:
 fig, ax = plt.subplots()
 a = (max(Req)//10 +1)*10
-b = (min(Req))//10)*10
+b = ((min(Req))//10)*10
 bin_ranges = list(range (int(b), int(a)+5, 5))     
 plt.figure(figsize=(10,10))
 freq, bins, patches = ax.hist (Req, bins=bin_ranges, edgecolor='black')
