@@ -110,7 +110,7 @@ fig, ax = plt.subplots()
 q = (max(Req)//10 +1)*10
 w = ((min(Req))//10)*10
 if scale == '1мкм' or scale == '3мкм': bin_ranges = list(range (int(w), int(q)+5, 5))   
-else: bin_ranges = list(range (int(w), int(q)+5, 10))   
+else: bin_ranges = list(range (int(w), int(q)+5, 20))   
 
 
 plt.figure(figsize=(10,10))
