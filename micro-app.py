@@ -109,7 +109,7 @@ else: nor = 0
 fig, ax = plt.subplots()
 q = (max(Req)//10 +1)*10
 w = ((min(Req))//10)*10
-if a = 1 or a = 3: bin_ranges = list(range (int(w), int(q)+5, 5))   
+if a == 1 or a == 3: bin_ranges = list(range (int(w), int(q)+5, 5))   
 else: bin_ranges = list(range (int(w), int(q)+5, 10))   
 
 
