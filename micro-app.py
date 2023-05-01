@@ -107,9 +107,12 @@ else: nor = 0
 
 # In[ ]:
 fig, ax = plt.subplots()
-a = (max(Req)//10 +1)*10
-b = ((min(Req))//10)*10
-bin_ranges = list(range (int(b), int(a)+5, 5))     
+q = (max(Req)//10 +1)*10
+w = ((min(Req))//10)*10
+if a = 1 or a = 3: bin_ranges = list(range (int(w), int(q)+5, 5))   
+else: bin_ranges = list(range (int(w), int(q)+5, 10))   
+
+
 plt.figure(figsize=(10,10))
 freq, bins, patches = ax.hist (Req, bins=bin_ranges, edgecolor='black')
 
