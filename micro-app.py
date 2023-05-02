@@ -50,7 +50,7 @@ if scale == '1мкм' :
     coef = 1000/400  
     a=1
 elif scale =='3мкм': 
-    coef = 3000/400  
+    coef = 3000/800  
     a=3
 elif scale =='5мкм': 
     coef = 5000/200 
