@@ -48,7 +48,7 @@ plt.imshow(gray)
 #находим пористость
 
 if scale == '1мкм' : 
-    coef = 1000/400  
+    coef = 1000/450  
     a=1
 elif scale =='3мкм': 
     coef = 3000/800  
