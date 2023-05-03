@@ -85,18 +85,11 @@ Req = []
 
 for n in nn:
     r = ((n*4/3.14)**0.5)*coef
-    if r > 50 and r < 3000 : Req.append(r)
+    if r > 100 and r < 3000 : Req.append(r)
 D = round(max(Req),2)
 Dav = round(np.mean(Req), 2)
 
-Seq = 0
-for r in Req:
-     if r < 35: a = 0.1
-     elif r > 45: a = 2.5
-     else: a = 1
-     Seq += r*a 
-Deq = Seq / len(Req)
-     
+   
 M = round(np.median(Req),2)
 # In[ ]:
 
