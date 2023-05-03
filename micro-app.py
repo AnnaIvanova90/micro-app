@@ -35,7 +35,7 @@ image = cv2.imread("image.jpg")
 # In[1]:
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 #thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 21, 50)
-thresh = cv2.threshold(gray, 230, 255, cv2.THRESH_BINARY_INV)
+thresh = cv2.threshold(gray, 127,255,cv.THRESH_BINARY)
 Contours, Hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 plt.figure(figsize=(10, 10))
