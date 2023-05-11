@@ -55,10 +55,10 @@ elif scale =='3мкм':
     coef = 3000/800  
     a=3
 elif scale =='5мкм': 
-    coef = 5000/40 
+    coef = 5000/45 
     a=5
 elif scale =='10мкм': 
-    coef = 10000/75 
+    coef = 10000/80 
     a=10
 else: 
     coef = 30000/200
